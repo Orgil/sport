@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Хуваарь</title>
+    <link href="/vendor/bootstrap3/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="/vendor/datepicker/css/datepicker.css" type="text/css" rel="stylesheet" />
+    <link href="/css/calendar.css" type="text/css" rel="stylesheet" />
+    <link href="/css/style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="well col-md-4 col-md-offset-4" style="margin-top:100px;">
+        <h2 class="form-signin-heading">Нэвтрэх</h2>
+        {{ error }}
+        <form class="form-signin" role="form" action="/login" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Нэвтрэх нэр" name="username">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Нууц үг" name="password">
+          </div>
+          <button class="btn btn-large btn-primary" type="submit">Нэвтрэх</button>
+        </form>
+      </div>
+    </div>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap3/js/bootstrap.min.js"></script>
+    <script src="/vendor/datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="/js/admin.js"></script>
+  </body>
+</html>

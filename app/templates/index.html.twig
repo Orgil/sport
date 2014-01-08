@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Хуваарь</title>
+    <link href="/vendor/bootstrap3/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="/css/calendar.css" type="text/css" rel="stylesheet" />
+    <link href="/css/style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Хуваарь</h1>
+      <div class="page-header">
+        <div class="pull-right form-inline">
+          <div class="btn-group">
+            <button class="btn btn-primary" data-calendar-nav="prev">&lt;&lt; Өмнөх</button>
+            <button class="btn" data-calendar-nav="today">Өнөөдөр</button>
+            <button class="btn btn-primary" data-calendar-nav="next">Дараах &gt;&gt;</button>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-warning" data-calendar-view="year">Жил</button>
+            <button class="btn btn-warning" data-calendar-view="month">Сар</button>
+            <button class="btn btn-warning active" data-calendar-view="week">7 хоног</button>
+            <button class="btn btn-warning" data-calendar-view="day">Өдөр</button>
+          </div>
+        </div>
+
+        <h3></h3>
+      </div>
+
+      <div id="calendar"></div>
+
+      <div class="modal hide fade" id="events-modal">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3>Арга хэмжээ</h3>
+        </div>
+        <div class="modal-body" style="height: 400px">
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn">Close</a>
+        </div>
+      </div>
+
+    </div>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap3/js/bootstrap.min.js"></script>
+    <script src="/vendor/underscore/underscore-min.js"></script>
+    <script src="/vendor/jstimezonedetect/jstz.min.js"></script>
+    <script src="/js/calendar.js"></script>
+    <script src="/js/language/mn-MN.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
