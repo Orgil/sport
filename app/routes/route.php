@@ -33,7 +33,7 @@ $app->post('/login/', function () use ($app) {
     $_SESSION['logged']=true;
     $app->redirect('/');
   } else {
-    $_SESSION['error'] = 'username or password is wrong';
+    $_SESSION['error'] = 'Таны оруулсан нэр болон нууц үг буруу байна.';
     $app->redirect('/login/');
   }
 
@@ -44,7 +44,58 @@ $app->get('/logout/', function () use ($app) {
   $app->redirect('/login/');
 });
 // admin route
-$app->get('/admin/', $isLogged($app), function () use ($app) {
-  // Render index view
-  $app->render('admin/index.html.twig');
+$app->group('/admin', $isLogged($app), function() use ($app) {
+  $app->get('/', function () use ($app) {
+    $events = Event::all();
+
+    // Render index view
+    $app->render('admin/index.html.twig', array('events'=>$events));
+  });
+
+  $app->get('/create', function () use ($app) {
+
+    // Render index view
+    $app->render('admin/create.html.twig');
+  });
+
+  $app->post('/create', function() use ($app) {
+    $title = $app->request()->post('title');
+    $start_at = $app->request()->post('start_at');
+    $finish_at = $app->request()->post('finish_at');
+    $description = $app->request()->post('description');
+
+    $event = new \Event();
+    $event->title = $title;
+    $event->start_at = $start_at;
+    $event->finish_at = $finish_at;
+    $event->description = $description;
+    $event->save();
+    $app->redirect('/admin/');
+  });
+
+  $app->get('/delete/:id', function($id) use ($app) {
+    $event = Event::find($id);
+    $event->delete();
+    $app->redirect('/admin/');
+  });
+
+  $app->get('/edit/:id', function($id) use ($app) {
+    $event = Event::find($id);
+    $app->render('admin/edit.html.twig', array('event'=>$event));
+  });
+
+  $app->post('/edit/:id', function($id) use ($app) {
+    $event = Event::find($id);
+    $title = $app->request()->post('title');
+    $start_at = $app->request()->post('start_at');
+    $finish_at = $app->request()->post('finish_at');
+    $description = $app->request()->post('description');
+
+    $event->title = $title;
+    $event->start_at = $start_at;
+    $event->finish_at = $finish_at;
+    $event->description = $description;
+    $event->save();
+    $app->redirect('/admin/');
+  });
 });

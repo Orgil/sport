@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Хуваарь</title>
+    <link href="/vendor/bootstrap3/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="/vendor/datepicker/css/datepicker.css" type="text/css" rel="stylesheet" />
+    <link href="/css/calendar.css" type="text/css" rel="stylesheet" />
+    <link href="/css/style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Хуваарь</h1>
+      <div class="well">
+        <form class="form-signin" role="form" action="/admin/edit/{{ event.id }}" method="POST">
+          <div class="form-group">
+            <label for="start_at">Арга хэмжээний нэр</label>
+            <input type="text" class="form-control" placeholder="Арга хэмжээний нэр" name="title" value="{{ event.title }}">
+          </div>
+          <div class="form-group">
+            <label for="start_at">Эхлэх огноо</label>
+            <input type="text" id="start_at" class="form-control datepicker" placeholder="Хэднээс эхлэх" name="start_at" value="{{ event.start_at|date("Y-m-d") }}">
+          </div>
+          <div class="form-group">
+            <label for="finish_at">Дуусах огноо</label>
+            <input type="text" id="finish_at" class="form-control datepicker" placeholder="Хэдэнд дуусах" name="finish_at" value="{{ event.finish_at|date("Y-m-d")}}">
+          </div>
+          <div class="form-group">
+            <label for="description">Тайлбар</label>
+            <textarea class="form-control" id="description" name="description">{{ event.description }}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="file_id">Шаардлагатай тохиолдолд файлыг хавсаргана уу.</label>
+            <input type="file" name="file_id" value="" />
+          </div>
+          <input type="submit" class="btn btn-primary" value="Засах">
+        </form>
+      </div>
+    </div>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap3/js/bootstrap.min.js"></script>
+    <script src="/vendor/datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="/js/admin.js"></script>
+  </body>
+</html>
