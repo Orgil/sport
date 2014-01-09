@@ -221,17 +221,20 @@
 .event-important {
   background-color: #ad2121;
 }
-.event-info {
+.event-blue{
   background-color: #1e90ff;
 }
-.event-warning {
+.event-yellow{
   background-color: #e3bc08;
 }
 .event-inverse {
   background-color: #1b1b1b;
 }
-.event-success {
+.event-green{
   background-color: #006400;
+}
+.event-orange{
+  background-color: #bb5300;
 }
 .event-special {
   background-color: #800080;
@@ -244,22 +247,27 @@
 .day-highlight.dh-event-important {
   background-color: #fae3e3;
 }
-.day-highlight.dh-event-warning:hover,
-.day-highlight.dh-event-warning {
+.day-highlight.dh-event-yellow:hover,
+.day-highlight.dh-event-yellow{
   background-color: #fdf1ba;
 }
-.day-highlight.dh-event-info:hover,
-.day-highlight.dh-event-info {
+.day-highlight.dh-event-blue:hover,
+.day-highlight.dh-event-blue{
   background-color: #d1e8ff;
 }
 .day-highlight.dh-event-inverse:hover,
 .day-highlight.dh-event-inverse {
   background-color: #c1c1c1;
 }
-.day-highlight.dh-event-success:hover,
-.day-highlight.dh-event-success {
+.day-highlight.dh-event-green:hover,
+.day-highlight.dh-event-green{
   background-color: #caffca;
 }
+.day-highlight.dh-event-orange:hover,
+.day-highlight.dh-event-orange{
+  background-color: #ffbc87;
+}
+
 .day-highlight.dh-event-special:hover,
 .day-highlight.dh-event-special {
   background-color: #ffe6ff;

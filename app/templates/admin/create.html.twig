@@ -10,7 +10,13 @@
   </head>
   <body>
     <div class="container">
-      <h1>Хуваарь</h1>
+      <div class="page-header">
+        <div class="pull-right">
+          <a class="btn btn-info" href="/" role="button">Календар</a>
+          <a href="/logout" class="btn btn-danger" role="button">Гарах</a>
+        </div>
+        <h1>Хуваарь</h1>
+      </div>
       <div class="well">
         <form class="form-signin" role="form" action="/admin/create" method="POST">
           <div class="form-group">
@@ -24,6 +30,15 @@
           <div class="form-group">
             <label for="finish_at">Дуусах огноо</label>
             <input type="text" id="finish_at" class="form-control datepicker" placeholder="Хэдэнд дуусах" name="finish_at">
+          </div>
+          <div class="form-group">
+            <label for="type">Арга хэмжээний төрөл</label>
+            <select name="type" id="type" class="form-control">
+              <option value="0">Шар - Цагдаа, дотоодын цэргийн аварга шалгаруулах тэмцээн</option>
+              <option value="1">Цэнхэр - Спорт явган аялал</option>
+              <option value="2">Улбар шар - Олон улсын тэмцээн, тэмдэглэлт баяр</option>
+              <option value="3">Ногоон - Төлөвлөгөөт арга хэмжээнүүд</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="description">Тайлбар</label>

@@ -4,7 +4,7 @@
 
 	var options = {
     language: 'mn-MN',
-		events_source: 'events.json.php',
+		events_source: '/admin/events',
 		view: 'month',
 		tmpl_path: 'tmpls/',
 		tmpl_cache: false,

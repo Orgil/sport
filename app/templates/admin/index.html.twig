@@ -10,9 +10,13 @@
   </head>
   <body>
     <div class="container">
-      <h1>Хуваарь</h1>
-      <div>
-        <a class="btn btn-primary" href="/admin/create" role="button">Арга хэмжээ нэмэх</a>
+      <div class="page-header">
+        <div class="pull-right">
+          <a class="btn btn-primary" href="/admin/create" role="button">Арга хэмжээ нэмэх</a>
+          <a class="btn btn-info" href="/" role="button">Календар</a>
+          <a href="/logout" class="btn btn-danger" role="button">Гарах</a>
+        </div>
+        <h1>Хуваарь</h1>
       </div>
       <table class="table table-striped">
         <thead>
@@ -21,6 +25,7 @@
             <th>Арга хэмжээний нэр</th>
             <th>Эхлэх огноо</th>
             <th>Дуусах огноо</th>
+            <th>Төрөл</th>
             <th>Үйлдэл</th>
           </tr>
         </thead>
@@ -31,6 +36,17 @@
             <td> {{ event.title }} </td>
             <td> {{ event.start_at|date("Y.m.d")}} </td>
             <td> {{ event.finish_at|date("Y.m.d")}} </td>
+            <td>
+              {% if event.type == 0 %}
+                Цагдаа, дотоодын цэргийн аварга шалгаруулах тэмцээн
+              {% elseif event.type == 1 %}
+                Спорт явган аялал
+              {% elseif event.type == 2 %}
+                Олон улсын тэмцээн, тэмдэглэлт баяр
+              {% elseif event.type == 3 %}
+                Төлөвлөгөөт арга хэмжээнүүд
+              {% endif %}
+            </td>
             <td>
               <a href="/admin/edit/{{ event.id }}" class="btn btn-warning btn-sm" role="button">Засах</a>
               <a href="/admin/delete/{{ event.id }}" class="btn btn-danger btn-sm" role="button">Устгах</a></td>

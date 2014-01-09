@@ -9,7 +9,15 @@
   </head>
   <body>
     <div class="container">
+      <div class="page-header">
+      <div class="pull-right">
+      {% if user.level == 0 %}
+        <a href="/admin" class="btn btn-primary" role="button">Админ</a>
+      {% endif %}
+        <a href="/logout" class="btn btn-danger" role="button">Гарах</a>
+      </div>
       <h1>Хуваарь</h1>
+      </div>
       <div class="page-header">
         <div class="pull-right form-inline">
           <div class="btn-group">
